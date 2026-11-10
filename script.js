@@ -46,7 +46,7 @@ function challenge5(sentence) {
   }
   let count = 1;
   for (let i = 0; i < temp.length; i++) {
-    if (temp[i] === " ") {
+    if (temp[i] === " " && temp[i + 1] != " ") {
       count++;
     }
   }
@@ -55,7 +55,8 @@ function challenge5(sentence) {
 
 function challenge6(votes) {
   if (votes.length === 0) {
-    return "There no vote yet.";
+    console.log("There is no vote yet.");
+    return;
   }
   let candidates = {
     A: 0,
@@ -79,4 +80,13 @@ function challenge6(votes) {
   }
 }
 
-console.log(challenge6(["A", "B", "B", "C", "A", "C"]));
+let arr1 = ['A', 'B', 'A', 'C', 'A'];
+let arr2 = ['A', 'B', 'B', 'C', 'A'];
+let arr3 = [];
+
+console.log("['A', 'B', 'A', 'C', 'A']");
+challenge6(arr1);
+console.log("['A', 'B', 'B', 'C', 'A']");
+challenge6(arr2);
+console.log("[]\n");
+challenge6(arr3);
